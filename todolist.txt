@@ -1,0 +1,16 @@
+#1
+-Cretae venv, install Django_frame and create project
+-Base pagew / templates
+    -Create app for pages
+    -Create base templates(meny, footer ...)
+    -Create front page
+    -Create about page
+-Auth
+-Simple dashboard
+-Craete new leads
+-Change and delete leads
+-Convert leads to clients
+-Change and delete clients
+-Implement solution for teams
+-Implement a payment solution / Monthly reccurring payments
+-Deploy
