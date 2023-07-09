@@ -6,11 +6,32 @@
     -Create front page
     -Create about page
 -Auth
+    -Create database model for userprofile
+    -Sign up 
+    -Login in 
+    -Log out
 -Simple dashboard
+    -new dj app
+        -db models
+        -view/forms for leads
+        -list out leads
+        -view detail page of leads
 -Craete new leads
 -Change and delete leads
 -Convert leads to clients
+    -create a new app
+    -create db model for client
+-Show a list of clients
+-Show a detail page of a client
+-Change and delete clients
+-Add clients
 -Change and delete clients
 -Implement solution for teams
+    -create teams app
+    -model for teams
+    -create new teams
+    -you need to be a member of a team
+    -when you create a lead, make sure teas is set
+    -when create a client, make sure team is set
 -Implement a payment solution / Monthly reccurring payments
 -Deploy

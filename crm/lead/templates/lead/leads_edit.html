@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Edit_lead{% endblock %}
+
+{% block content %}
+    <div class="py-6 px-6">
+        <h1 class="text-xl">Edit Lead</h1>
+
+        <!-- create form from lead.forms -->
+        <form method="post" action=".">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button class="py-4 px-8 bg-teal-500 rounded-xl text-white">Edit lead</button>
+        </form>
+    </div>
+{% endblock %}

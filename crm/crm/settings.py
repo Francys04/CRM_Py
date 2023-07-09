@@ -27,6 +27,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# login redirect page
+LOGIN_REDIRECT_URL = '/dashboard/'
+LOGIN_URL = 'login'
+LOGOUT_REDIRECT_URL = 'index'
+
 
 # Application definition
 
@@ -40,6 +45,11 @@ INSTALLED_APPS = [
     
     # new apps
     'core',
+    'userprofile',
+    'dashboard',
+    'lead',
+    'clients',
+    'team',
 ]
 
 MIDDLEWARE = [
