@@ -33,5 +33,9 @@
     -you need to be a member of a team
     -when you create a lead, make sure teas is set
     -when create a client, make sure team is set
+    -if you are not a member of a team, create one
+    -if you are the owner, make it possible to edit team 
+    -limit member of leads
+    -limit member of clients
 -Implement a payment solution / Monthly reccurring payments
 -Deploy

@@ -11,7 +11,7 @@
         <div class="w-1/2 px-4 py-6 bg-gray-200 rounded-xl leads">
             <h2 class="mb-4 text-lg">Newest leads </h2>
 
-            <!-- formating the details data on dash -->
+<!-- formating the details data on dash -->
             {% for lead in leads %}
                 <div class="mb-2 lead">
                     <h3 class="font-semibold">{{ lead.name }}</h3>
@@ -19,13 +19,12 @@
                     <p class="'text-xs">Status: {{ lead.get_status_display }}</p>
                     <p class="'text-xs">Priority: {{ lead.get_priority_display }}</p>
 
-                    <a href="{% url 'leads_detail' lead.pk }">Details of lead</a>
+                    <a href="{% url 'leads_detail' lead.pk %}">Details of lead</a>
                 </div>
             {% endfor %}
         </div>
 
-
-
+<!-- clients list -->
         <div class="w-1/2 px-4 py-6 bg-gray-200 rounded-xl clients">
             <h2 class="mb-4 text-lg">Newest clients </h2>
        
@@ -34,7 +33,7 @@
             <div class="mb-2 client">
                 <h3 class="font-semibold">{{ client.name }}</h3>
 
-                <a href="{% url 'clients_detail' client.pk }">Details of client</a>
+                <a href="{% url 'clients_detail' client.id %}">Details of client</a>
             </div>
             {% endfor %}
         </div>

@@ -62,6 +62,8 @@ def leads_edit(request, pk):
 # create for Add lead button
 @login_required
 def add_lead(request):
+    # how many leads we have
+    team = Team.objects.filter(created_by=request.user)[0]
     # /if request method is POST
     if request.method == 'POST':
         form = AddLeadForm(request.POST)
@@ -83,7 +85,8 @@ def add_lead(request):
         form = AddLeadForm()
     
     return render(request, 'lead/add_lead.html', {
-        'form': form
+        'form': form,
+        'team': team
     })
     
 # conver to client

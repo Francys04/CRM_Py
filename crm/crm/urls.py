@@ -5,12 +5,14 @@ from django.contrib.auth import views
 
 # import view
 from core.views import index, about
-from userprofile.views import signup
+from userprofile.views import signup, myaccount
 
 urlpatterns = [
     path('dashboard/lead/', include('lead.urls')),#path for add leads
     path('dashboard/', include('dashboard.urls')),#path for dashboard
     path('dashboard/clients/', include('clients.urls')),#path for clients list
+    path('dashboard/myaccount/', myaccount, name='myaccount'),#path for account view
+    path('dashboard/teams/', include('team.urls')),#path for edit team
     path('admin/', admin.site.urls),#path for admin manager
     path('', index, name='index'),#path for index page(start page)
     path('about/', about, name='about'), #path for about info

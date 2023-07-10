@@ -28,6 +28,8 @@ def clients_detail(request, pk):
 # add new clients
 @login_required
 def clients_add(request):
+    # show limit of number of user
+    team = Team.objects.filter(created_by=request.user)[0]
     # /if request method is POST
     if request.method == 'POST':
         form = AddClientForm(request.POST)
@@ -50,7 +52,8 @@ def clients_add(request):
         form = AddClientForm()
     
     return render(request, 'clients/clients_add.html', {
-        'form': form
+        'form': form,
+        'team': team
     })
     
 # edit
