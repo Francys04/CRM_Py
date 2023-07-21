@@ -1,6 +1,6 @@
 #1
 -Cretae venv, install Django_frame and create project
--Base pagew / templates
+-Base page / templates
     -Create app for pages
     -Create base templates(meny, footer ...)
     -Create front page
@@ -37,5 +37,5 @@
     -if you are the owner, make it possible to edit team 
     -limit member of leads
     -limit member of clients
--Implement a payment solution / Monthly reccurring payments
+-Test
 -Deploy
