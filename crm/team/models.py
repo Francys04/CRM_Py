@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
-# Create your models here.
-# for limitation of number of user
+
+"""This class is for limitation of number of user"""
 class Plan(models.Model):
     name = models.CharField(max_length=100)
     price = models.IntegerField()
@@ -13,6 +13,9 @@ class Plan(models.Model):
     def __str__(self):
         return self.name
 
+"""The Team class model allows you to store information about teams, their associated plan, 
+their members, and the user who created the team, 
+providing a foundation for managing team-related data in your Django application."""
 class Team(models.Model):
     plan = models.ForeignKey(Plan, related_name='teams', on_delete=models.CASCADE,  null=True)
     name = models.CharField(max_length=150)

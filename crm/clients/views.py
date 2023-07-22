@@ -1,5 +1,11 @@
+"""The render function is used to render Django templates with context data. 
+The get_object_or_404 function is used to retrieve an object from the database based on a specific model and primary key (pk).
+The redirect function is used to redirect the user to a different URL."""
 from django.shortcuts import render, get_object_or_404, redirect
+"""login_required is a useful tool for restricting access to certain views 
+in web application to only authenticated users. """
 from django.contrib.auth.decorators import login_required
+"""messages framework provides a simple way to send messages from the server to the user's web browser. """
 from django.contrib import messages
 
 from .models import Client
@@ -7,7 +13,10 @@ from .forms import AddClientForm
 
 from team.models import Team
 
-# Create your views here.
+"""
+The clients_list function uses the login_required decorator to ensure 
+that only authenticated users can access the view. It retrieves a list of clients 
+associated with the currently logged-in user and renders the data in the 'clients/clients_list.html' template."""
 @login_required
 def clients_list(request):
     clients = Client.objects.filter(create_by=request.user)
@@ -16,7 +25,8 @@ def clients_list(request):
         'clients': clients
     }) 
     
-    
+"""It retrieves the details of a specific client associated with the currently logged-in user based on the provided primary key (pk). 
+If the client does not exist, it raises a 404 error using get_object_or_404."""
 @login_required
 def clients_detail(request, pk):
     client = get_object_or_404(Client, create_by=request.user, pk=pk)
@@ -25,7 +35,7 @@ def clients_detail(request, pk):
         'client': client
     }) 
 
-# add new clients
+"""Add new clients"""
 @login_required
 def clients_add(request):
     # show limit of number of user
@@ -56,7 +66,7 @@ def clients_add(request):
         'team': team
     })
     
-# edit
+"""Edit clients"""
 @login_required
 def clients_edit(request, pk):
     lead = get_object_or_404(Client,create_by=request.user, pk=pk)
@@ -79,7 +89,7 @@ def clients_edit(request, pk):
 
     
     
-# delete
+"""Delete clients"""
 def clients_delete(request, pk):
     client = get_object_or_404(Client,create_by=request.user, pk=pk)
     client.delete()

@@ -1,9 +1,13 @@
-# clients/tests.py
+"""The django.test.TestCase class is a subclass of Django's unittest.
+TestCase and provides additional features and utilities to simplify testing of Django applications."""
 from django.test import TestCase
 from clients.models import Client
 from team.models import Team, Plan
+""" The User model is a built-in model provided by Django for handling user authentication and authorization."""
 from django.contrib.auth.models import User
 
+""" Test case for the Client model. 
+This test case includes two test methods: test_client_model_str and test_client_model_ordering."""
 class ClientModelTest(TestCase):
     def setUp(self):
         self.user = User.objects.create_user(username='testuser', password='testpassword')

@@ -1,9 +1,16 @@
+"""The django.test.TestCase class is a subclass of Django's unittest.
+TestCase and provides additional features and utilities to simplify testing of Django applications."""
 from django.test import TestCase
+"""reverse -> allow to avoid hardcoding URLs in your views, templates, and tests, 
+making code more maintainable and adaptable."""
 from django.urls import reverse
+""" The User model is a built-in model provided by Django for handling user authentication and authorization."""
 from django.contrib.auth.models import User
 from clients.models import Client
 from team.models import Team
 
+"""View tests for the Client view. 
+I define two test methods: test_clients_list_view and test_clients_detail_view."""
 class ClientsViewsTestCase(TestCase):
     def setUp(self):
         # Create a test user

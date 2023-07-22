@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
-# Create your views here.
+"""This functions define view render templates to display the content of the 'core/index.html' and 
+'core/about.html' templates, respectively."""
 
 def index(request):
     return render(request, 'core/index.html')

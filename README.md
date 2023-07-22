@@ -51,3 +51,12 @@ In this project i create with django-framework, CRM for implements new tehnologi
 
 ### Create app team
 - This is the last app, when you create team make sure team is set, create a lead make sure team is set.
+
+## TestCases
+- A test case is a singular set of actions or instructions for a tester to perform that validates a specific aspect of a product or application functionality. If the test fails, the result might be a software defect that the organization can triage.
+-  In this project compartment we used testcases to check the response of the function calls created in the models and view files. To check the code I used assertions for to verify that the actual outcomes of test cases match the expected outcomes. When writing test cases, i set up specific scenarios and actions, and then you use assertions to check if the results of those actions are as expected.
+- For example in team app i tested models functions ,file is used to define the database schema and data model for the application. First i define a TestModel class with setup and test_plan_atributes functions, in setup i create name, descriptions and other data for create a team and in the next function with assertions, the test program performed the data comparison.
+## Dockerization
+Dockerizing is the process of packing, deploying, and running applications using Docker containers. Docker is an open-source tool that ships your application with all the necessary functionalities as one package.
+- For this step i create Dockerfile and docker-compose.yml file for to define the environment and instructions for building a Docker container. 
+- This Dockerfile sets up a Python environment, installs the required Python packages, copies the application code, and specifies the command to run the Django development server. To build and run the Docker container, you can use Docker commands like docker compose build and docker compose up.

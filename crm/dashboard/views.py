@@ -6,7 +6,8 @@ from lead.models import Lead
 from clients.models import Client
 from team.models import Team
 
-# create dashboard
+"""Decorator requires the user to be authenticated (logged in) to access it, thanks to the @login_required decorator. 
+This view is responsible for rendering the content of the dashboard page for an authenticated user."""
 @login_required
 def dashboard(request):
     team = Team.objects.filter(created_by=request.user)[0]
