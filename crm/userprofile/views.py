@@ -3,34 +3,33 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 # import userprofile for check information
 from .models import Userprofile
+from .forms import SignupForm
 # for my account
 from django.contrib.auth.decorators import login_required
 # for team account
 from team.models import Team
 
+from .models import Userprofile
+
 # Create your views here.
 
 def signup(request):
-    # check if the form has been submited
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        # if info is correct
+        form = SignupForm(request.POST)
+
         if form.is_valid():
             user = form.save()
-            Userprofile.objects.create(user=user)
-            # invitations for users
-            team = Team.objects.create(name='The team name', created_by=request.user)
-            team.memebers.add(request.user)
+
+            team = Team.objects.create(name='The team name', created_by=user)
+            team.members.add(user)
             team.save()
             
-            return redirect('/log_in')
-        # if not post request
-        else:
-            form = UserCreationForm()
-        
-    form = UserCreationForm()
-    
-    # render form : form
+            Userprofile.objects.create(user=user, active_team=team)
+
+            return redirect('/log-in/')
+    else:
+        form = SignupForm()
+
     return render(request, 'userprofile/signup.html', {
         'form': form
     })

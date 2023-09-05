@@ -60,3 +60,12 @@ In this project i create with django-framework, CRM for implements new tehnologi
 Dockerizing is the process of packing, deploying, and running applications using Docker containers. Docker is an open-source tool that ships your application with all the necessary functionalities as one package.
 - For this step i create Dockerfile and docker-compose.yml file for to define the environment and instructions for building a Docker container. 
 - This Dockerfile sets up a Python environment, installs the required Python packages, copies the application code, and specifies the command to run the Django development server. To build and run the Docker container, you can use Docker commands like docker compose build and docker compose up.
+
+#### Fig.1 Add clients if we have limit num
+<img src="img/add clients.JPG">
+
+#### Fig.2 My account dashboard
+<img src="img/my account.JPG">
+
+#### Fig.3 ASigh-up view
+<img src="img/sighup.JPG">
